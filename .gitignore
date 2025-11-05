@@ -1,0 +1,31 @@
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/frontend/.svelte-kit
+/frontend/dist
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+
+#configs e metadatas
+backend/data/app.config.json
+backend/data/metadata.json
+
+backend/data/assets/thumbnails
+backend/data/assets/wallpaper

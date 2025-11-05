@@ -1,0 +1,147 @@
+:root {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    --bg-color: #1A1B26;
+    --second-bg: #7AA2F7;
+    --color-txt1: #D0D8F9;
+    --color-txt2: #0b0b11;
+    --card-width: 20rem;
+    --card-height: 10rem;
+    --card-header: 6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    padding: 1rem 0;
+    height: 10rem;
+    background-color: var(--bg-color);
+    opacity: 0.9;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .justify-center{
+        margin-left: auto;
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            h1{
+                font-size: 3.2rem;
+            }
+
+            p {
+                font-size: 2rem;
+            }
+
+            h1, p {
+                color: var(--color-txt1);
+            }
+        }
+    }
+
+    nav {
+        font-size: 3.2rem;
+        padding-right: 3rem;
+        right: 0;
+        margin-left: auto;
+        color: var(--color-txt1);
+        ul {
+            list-style-type: none;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 80%;
+    width: 100%;
+}
+
+.card {
+    max-width: var(--card-width);
+    max-height: var(--card-height);
+    width: var(--card-width);
+    height: var(--card-height);
+    background-color: var(--second-bg);
+    color: var(--color-txt2);
+    border-radius: .5rem;
+    cursor: pointer;
+
+    .card-header{
+        width: 100%;
+        border-radius: .5rem;
+        height: 6.5rem;
+        max-height: 6.5rem;
+        transition: .3s;
+
+        .card-image{
+            
+            border-radius: .5rem;
+            
+            img{
+                border-radius: .5rem;
+                object-fit:cover;
+                width: 100%;
+                height: 6.5rem;
+            }
+        }
+    }
+
+    .card-body {
+        
+        padding: 1rem 1rem;
+        
+        h2{
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+    }
+
+    
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.mt-12 {
+    margin-top: 12rem;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.gap-1{
+    gap: 1rem;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}

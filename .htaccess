@@ -1,0 +1,16 @@
+# Permitir reescrita de URLs
+RewriteEngine On
+
+# Redirecionar tudo que não for arquivo físico para o router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona para o router.php
+RewriteRule ^backend/?(.*)$ backend/router.php [QSA,L]
+
+# Permitir acesso direto ao frontend Svelte
+RewriteCond %{REQUEST_URI} ^/\hub/dist/
+RewriteRule ^ - [L]
+
+# Padrão: servir index.html do frontend
+RewriteRule ^$ dist/index.html [L]
