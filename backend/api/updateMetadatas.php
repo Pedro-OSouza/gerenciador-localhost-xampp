@@ -19,9 +19,9 @@ if(!$folderName){
     exit;
 }
 
-create_data_dir();
+create_dir(DATA_DIR);
 
-create_metadata_archive();
+create_archive(METADATA_FILE);
 
 /* le metadata */
 $metadata = read_metadata();

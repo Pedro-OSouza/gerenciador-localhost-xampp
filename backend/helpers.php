@@ -11,15 +11,15 @@
         return $path;
     }
 
-    function create_data_dir(){
-        if(!is_dir(DATA_DIR)){
-            mkdir(DATA_DIR, 0777, true);
+    function create_dir($dir){
+        if(!is_dir($dir)){
+            mkdir($dir, 0777, true);
         }
     }
 
-    function create_metadata_archive(){
-        if(!file_exists(METADATA_FILE)){
-            file_put_contents(METADATA_FILE, '');
+    function create_archive($arch){
+        if(!file_exists($arch)){
+            file_put_contents($arch, '');
         }
     }
 
