@@ -3,6 +3,7 @@
     import { modalStore, closeModal } from "../../../stores/modalStore.js";
     import { writable, get } from "svelte/store";
     import { updateMetadatasService } from "../../../services/updateMetadatasService.js";
+    import { fileSystemStore } from "../../../stores/fileSystemStores.js";
   
     const form = writable({ thumbnail: "", description: "", file: null });
   
@@ -36,6 +37,12 @@
         folderName,
         description,
         thumbnail: file
+      }).then(async (res) => {
+        // Se o backend respondeu OK, atualiza no store:
+        fileSystemStore.updateItemMetadata(folderName, {
+          description,
+          thumbnail: updated.thumbnail || $modalStore.item._metadata.thumbnail
+        });
       });
       
       closeModal();

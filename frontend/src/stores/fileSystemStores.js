@@ -53,6 +53,24 @@ function createFileSystemStore(){
             await this.loadPath(folderPath)
         },
 
+        updateItemMetadata(folderName, metadata) {
+            update(store => {
+                const items = store.items.map(item => {
+                    if (item._name === folderName) {
+                    return {
+                        ...item,
+                        _metadata: {
+                        ...item._metadata,
+                        ...metadata
+                        }
+                    };
+                    }
+                    return item;
+                });
+                return { ...store, items };
+                });
+        },
+
         goBack(){
             update(state => {
                 if(state.historyIndex > 0){
